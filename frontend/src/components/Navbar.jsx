@@ -6,8 +6,8 @@ import { Menu } from "lucide-react";
 const Navbar = () => {
   return (
     <header
-      className="sticky top-0 z-50 shadow-sm"
-      style={{ backgroundColor: "#0f0f0f", color: "#ffffff" }}
+      className="sticky top-0 z-50 shadow-sm backdrop-blur-md bg-black/80"
+      style={{ color: "#ffffff" }}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3 md:py-5">
         {/* Logo */}

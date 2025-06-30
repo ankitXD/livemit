@@ -5,13 +5,15 @@ const Features = () => {
     <div className="flex flex-col items-center justify-start min-h-screen text-white text-center px-4">
       {/* Problem Section */}
       <section className="w-full max-w-3xl mb-16 pt-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg">
-          Tired of Noisy, Distracting Project Reviews?
-        </h1>
-        <p className="text-lg md:text-xl opacity-90 mb-4">
-          Most platforms mix real feedback with endless social noise, making it
-          hard to focus and improve your work.
-        </p>
+        <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl shadow-2xl p-8 border border-blue-900 flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow-lg">
+            Tired of Noisy, Distracting Project Reviews?
+          </h1>
+          <p className="text-lg md:text-xl text-zinc-300 mb-2 max-w-2xl">
+            Most platforms mix real feedback with endless social noise, making
+            it hard to focus and improve your work.
+          </p>
+        </div>
       </section>
       {/* Solution Section */}
       <section className="w-full max-w-3xl mb-16">

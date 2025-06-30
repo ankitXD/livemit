@@ -15,15 +15,16 @@ const Home = () => {
           <span className="whitespace-nowrap">and collaboration.</span>
         </h2>
         <p className="text-base md:text-lg opacity-80 mb-6">
-          Join a community of makers and reviewers. {" "}
-          <span className="whitespace-nowrap">Share your work, get
-          insights, and connect—all distraction-free.</span>
+          Join a community of makers and reviewers.{" "}
+          <span className="whitespace-nowrap">
+            Share your work, get insights, and connect—all distraction-free.
+          </span>
         </p>
-        <button className="px-4 py-3 mt-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors cursor-pointer">
-          <Link to="/signup" className="text-white">
+        <Link to="/signup" className="w-full">
+          <button className="px-5 py-3 mt-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors cursor-pointer">
             Get Started
-          </Link>
-        </button>
+          </button>
+        </Link>
       </section>
 
       {/* Key Features / Benefits section */}
@@ -122,134 +123,99 @@ const Home = () => {
       <section className="w-full max-w-5xl mt-24 mb-20">
         <h2 className="text-3xl md:text-4xl font-bold mb-10">Pricing</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center border border-blue-400/30">
-            <h3 className="text-xl font-bold mb-2">Free</h3>
-            <p className="mb-4">
+          {/* Free Plan */}
+          <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-900/40">
+            <h3 className="text-xl font-bold mb-2 text-white">Free</h3>
+            <p className="mb-4 text-zinc-300">
               Perfect for individuals just getting started.
             </p>
-            <ul className="mb-6 text-left list-disc list-inside opacity-90">
+            <ul className="mb-6 text-left list-disc list-inside text-zinc-200 opacity-90">
               <li>Unlimited project reviews</li>
               <li>Access to public projects</li>
               <li>Basic feedback tools</li>
             </ul>
-            <span className="text-3xl font-extrabold mb-4">$0</span>
-            <button className="px-6 py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow">
-              Get Started
-            </button>
+            <span className="text-3xl font-extrabold mb-4 text-blue-400">
+              ₹0
+            </span>
+            <Link to="/signup" className="w-full">
+              <button className="w-full px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer mt-2">
+                Get Started
+              </button>
+            </Link>
           </div>
-          <div className="bg-white/20 rounded-xl p-8 shadow-2xl flex flex-col items-center border-2 border-blue-600 scale-105 z-10">
-            <h3 className="text-xl font-bold mb-2 text-blue-600">Pro</h3>
-            <p className="mb-4">For power users and professionals.</p>
-            <ul className="mb-6 text-left list-disc list-inside opacity-90">
+          {/* Pro Plan */}
+          <div className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border-2 border-blue-600 scale-105 z-10">
+            <h3 className="text-xl font-bold mb-2 text-blue-400">Pro</h3>
+            <p className="mb-4 text-zinc-300">
+              For power users and professionals.
+            </p>
+            <ul className="mb-6 text-left list-disc list-inside text-zinc-200 opacity-90">
               <li>Everything in Free</li>
               <li>Private project reviews</li>
               <li>Advanced analytics</li>
               <li>Priority support</li>
             </ul>
-            <span className="text-3xl font-extrabold mb-4">
-              $9<span className="text-lg font-medium">/mo</span>
+            <span className="text-3xl font-extrabold mb-4 text-blue-400">
+              ₹749<span className="text-lg font-medium text-zinc-300">/mo</span>
             </span>
-            <button className="px-6 py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow">
-              Start Pro Trial
-            </button>
+            <Link to="/signup" className="w-full">
+              <button className="w-full px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer mt-2">
+                Start Pro Trial
+              </button>
+            </Link>
           </div>
-          <div className="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center border border-blue-400/30">
-            <h3 className="text-xl font-bold mb-2">Team</h3>
-            <p className="mb-4">Best for teams and organizations.</p>
-            <ul className="mb-6 text-left list-disc list-inside opacity-90">
+          {/* Enterprise Plan */}
+          <div className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-600">
+            <h3 className="text-xl font-bold mb-2 text-blue-400">Enterprise</h3>
+            <p className="mb-4 text-zinc-300">
+              For large teams and organizations.
+            </p>
+            <ul className="mb-6 text-left list-disc list-inside text-zinc-200 opacity-90">
               <li>Everything in Pro</li>
-              <li>Team management tools</li>
-              <li>Custom integrations</li>
-              <li>Dedicated support</li>
+              <li>Dedicated account manager</li>
+              <li>Custom solutions and integrations</li>
+              <li>Enhanced security and compliance</li>
             </ul>
-            <span className="text-3xl font-extrabold mb-4">
-              $29<span className="text-lg font-medium">/mo</span>
+            <span className="text-3xl font-extrabold mb-4 text-blue-400">
+              Contact Us
             </span>
-            <button className="px-6 py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow">
-              Contact Sales
-            </button>
+            <Link to="/signup" className="w-full">
+              <button className="w-full px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer mt-2">
+                Contact Sales
+              </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full max-w-2xl mx-auto mt-24 mb-24">
-        <div className="bg-white/10 rounded-xl p-10 shadow-lg flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Ready to get started?
-          </h2>
-          <p className="text-lg md:text-xl mb-8 text-white/90">
-            Join hundreds of users reviewing projects distraction-free. Sign up
-            now and try it for free!
-          </p>
-          <button className="px-10 py-4 rounded-lg bg-blue-600 text-white font-extrabold text-xl shadow-lg hover:bg-blue-700 transition-colors">
-            Start Your Free Trial
-          </button>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="w-full max-w-3xl mx-auto mt-24 mb-24">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-white">
-          Frequently Asked Questions
+      {/* Call to Action Section */}
+      <section className="w-full max-w-3xl mx-auto mt-24 mb-12 p-6 bg-white/10 rounded-xl shadow-lg text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          Ready to Elevate Your Projects?
         </h2>
-        <div className="flex flex-col gap-6">
-          <div className="bg-white/10 rounded-xl p-6 shadow flex flex-col items-start text-left">
-            <h3 className="text-xl font-semibold mb-2 text-blue-200">
-              Is LiveMit really free?
-            </h3>
-            <p className="opacity-90">
-              Yes! You can use all basic features for free, forever. Paid plans
-              unlock more advanced tools for power users and teams.
-            </p>
-          </div>
-          <div className="bg-white/10 rounded-xl p-6 shadow flex flex-col items-start text-left">
-            <h3 className="text-xl font-semibold mb-2 text-blue-200">
-              Do I need a Twitter account?
-            </h3>
-            <p className="opacity-90">
-              No, LiveMit is completely independent. You don’t need any social
-              media account to review or get feedback on projects.
-            </p>
-          </div>
-          <div className="bg-white/10 rounded-xl p-6 shadow flex flex-col items-start text-left">
-            <h3 className="text-xl font-semibold mb-2 text-blue-200">
-              How is my data protected?
-            </h3>
-            <p className="opacity-90">
-              We take privacy seriously. Your data is encrypted and never sold
-              or shared with third parties.
-            </p>
-          </div>
-          <div className="bg-white/10 rounded-xl p-6 shadow flex flex-col items-start text-left">
-            <h3 className="text-xl font-semibold mb-2 text-blue-200">
-              Can I use LiveMit with my team?
-            </h3>
-            <p className="opacity-90">
-              Absolutely! Our Team plan is designed for collaboration, with
-              tools for managing members and projects.
-            </p>
-          </div>
-        </div>
+        <p className="text-lg opacity-90 mb-6">
+          Join LiveMit today and start receiving the feedback you need to grow.
+        </p>
+        <Link to="/signup" className="w-full">
+          <button className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg shadow-md transition-colors cursor-pointer">
+            Join the Community
+          </button>
+        </Link>
       </section>
 
       {/* Footer Section */}
-      <footer className="w-full bg-white/10 text-white text-center py-8 mt-10 rounded-t-xl shadow-inner">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
-          <span className="font-bold text-lg tracking-wide">LiveMit</span>
-          <span className="opacity-80">
-            &copy; {new Date().getFullYear()} LiveMit. All rights reserved.
-          </span>
-          <div className="flex gap-4 justify-center">
-            <a href="#" className="hover:text-blue-400 transition-colors">
+      <footer className="w-full max-w-5xl mx-auto py-10 border-t border-white/10">
+        <div className="flex flex-col md:flex-row items-center justify-between text-sm text-zinc-400">
+          <p className="mb-4 md:mb-0">
+            &copy; 2025 LiveMit. All rights reserved.
+          </p>
+          <div className="flex space-x-4">
+            <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Terms
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Contact
-            </a>
+            </Link>
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </footer>
