@@ -19,8 +19,16 @@ const Navbar = () => {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center space-x-3">
-          <Link to="/login"><Button variant="ghost" className="text-white hover:text-blue-400">Login</Button></Link>
-          <Button asChild className="bg-blue-600 text-white hover:bg-blue-700"><Link to="/login">Get Started</Link></Button>
+          <Link to="/login">
+            <Button variant="outline" className="border-blue-500 text-blue-400 hover:bg-blue-900 hover:text-white font-semibold px-6 py-2 rounded-lg transition-colors cursor-pointer">
+              Login
+            </Button>
+          </Link>
+          <Button asChild className="bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold px-6 py-2 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition-colors cursor-pointer">
+            <Link to="/login">
+              Get Started
+            </Link>
+          </Button>
         </div>
 
         {/* Mobile Menu Icon */}

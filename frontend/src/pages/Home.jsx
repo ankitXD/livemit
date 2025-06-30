@@ -6,19 +6,19 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="w-full max-w-3xl mx-auto mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight drop-shadow ">
-          Discover, Review, and Grow with LiveMit
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-200">
-          A focused platform for project feedback and collaboration
-        </h2>
-        <p className="text-base md:text-lg opacity-80 mb-6">
-          Join a community of makers and reviewers. Share your work, get insights, and connect—all distraction-free.
-        </p>
-        <button className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors">
-          Get Started Free
-        </button>
-      </section>
+    <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight drop-shadow">
+      Discover, Review, and <span className="whitespace-nowrap">Grow with LiveMit</span>
+    </h1>
+    <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-200">
+      A focused platform for project feedback <span className="whitespace-nowrap">and collaboration</span>
+    </h2>
+    <p className="text-base md:text-lg opacity-80 mb-6">
+      Join a community of makers and reviewers. Share your work, get insights, and connect—all <span className="whitespace-nowrap">distraction-free.</span>
+    </p>
+    <button className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors">
+      Get Started Free
+    </button>
+  </section>
       
       {/* Key Features / Benefits section */}
       <section className="w-full max-w-4xl mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
