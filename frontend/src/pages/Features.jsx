@@ -52,7 +52,8 @@ const Features = () => {
           <span className="text-4xl mb-4">🤝</span>
           <h2 className="text-2xl font-bold mb-2">Community Driven</h2>
           <p className="opacity-90">
-            Connect with like-minded creators, share feedback, and grow together.
+            Connect with like-minded creators, share feedback, and grow
+            together.
           </p>
         </div>
         <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
