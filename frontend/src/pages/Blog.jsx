@@ -12,11 +12,11 @@ const Blog = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Example Blog Post 1 */}
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-start text-left">
-            <h2 className="text-2xl font-bold mb-2">
+          <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-start text-left border border-blue-900/40 transition-transform hover:scale-[1.025] hover:shadow-blue-900/30 cursor-pointer">
+            <h2 className="text-2xl font-bold mb-2 text-blue-300">
               How to Get Better Project Feedback
             </h2>
-            <p className="opacity-90 mb-4">
+            <p className="opacity-90 mb-4 text-zinc-200">
               Learn actionable strategies to receive and give more valuable
               feedback on your projects.
             </p>
@@ -31,11 +31,11 @@ const Blog = () => {
             </a>
           </div>
           {/* Example Blog Post 2 */}
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-start text-left">
-            <h2 className="text-2xl font-bold mb-2">
+          <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-start text-left border border-blue-900/40 transition-transform hover:scale-[1.025] hover:shadow-blue-900/30 cursor-pointer">
+            <h2 className="text-2xl font-bold mb-2 text-blue-300">
               Why Privacy Matters in Online Communities
             </h2>
-            <p className="opacity-90 mb-4">
+            <p className="opacity-90 mb-4 text-zinc-200">
               Explore the importance of privacy and how LiveMit keeps your data
               safe.
             </p>
@@ -50,11 +50,11 @@ const Blog = () => {
             </a>
           </div>
           {/* Example Blog Post 3 */}
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-start text-left">
-            <h2 className="text-2xl font-bold mb-2">
+          <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-start text-left border border-blue-900/40 transition-transform hover:scale-[1.025] hover:shadow-blue-900/30 cursor-pointer">
+            <h2 className="text-2xl font-bold mb-2 text-blue-300">
               Building a Distraction-Free Workflow
             </h2>
-            <p className="opacity-90 mb-4">
+            <p className="opacity-90 mb-4 text-zinc-200">
               Tips and tools for staying focused and productive while working on
               your projects.
             </p>
@@ -69,11 +69,11 @@ const Blog = () => {
             </a>
           </div>
           {/* Example Blog Post 4 */}
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-start text-left">
-            <h2 className="text-2xl font-bold mb-2">
+          <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-start text-left border border-blue-900/40 transition-transform hover:scale-[1.025] hover:shadow-blue-900/30 cursor-pointer">
+            <h2 className="text-2xl font-bold mb-2 text-blue-300">
               The Power of Community Feedback
             </h2>
-            <p className="opacity-90 mb-4">
+            <p className="opacity-90 mb-4 text-zinc-200">
               How engaging with a supportive community can help you grow faster.
             </p>
             <span className="text-sm opacity-70 mb-2">
