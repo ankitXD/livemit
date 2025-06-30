@@ -32,12 +32,12 @@ const Navbar = () => {
           >
             Pricing
           </Link>
-          <a
+          <Link
             href="/blog"
             className="hover:text-blue-400 text-white transition-colors"
           >
             Blog
-          </a>
+          </Link>
         </div>
 
         {/* CTA Buttons */}
