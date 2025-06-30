@@ -5,26 +5,26 @@ const Home = () => {
     <div className="flex flex-col items-center justify-start min-h-screen text-white text-center px-4 pt-20">
       {/* Hero Section */}
       <section className="w-full max-w-3xl mx-auto mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight drop-shadow">
+        <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight drop-shadow">
           Discover, Review, and{" "}
-          <span className="whitespace-nowrap">Grow with LiveMit</span>
+          <span className="whitespace-nowrap">Grow with LiveMit.</span>
         </h1>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-blue-200">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-blue-200">
           A focused platform for project feedback{" "}
-          <span className="whitespace-nowrap">and collaboration</span>
+          <span className="whitespace-nowrap">and collaboration.</span>
         </h2>
         <p className="text-base md:text-lg opacity-80 mb-6">
-          Join a community of makers and reviewers. Share your work, get
-          insights, and connect—all{" "}
-          <span className="whitespace-nowrap">distraction-free.</span>
+          Join a community of makers and reviewers. {" "}
+          <span className="whitespace-nowrap">Share your work, get
+          insights, and connect—all distraction-free.</span>
         </p>
-        <button className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors">
-          Get Started Free
+        <button className="px-4 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors">
+          Get Started
         </button>
       </section>
 
       {/* Key Features / Benefits section */}
-      <section className="w-full max-w-4xl mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="w-full max-w-4xl mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
           <span className="text-4xl mb-4">🚀</span>
           <h2 className="text-2xl font-bold mb-2">Fast & Focused</h2>
