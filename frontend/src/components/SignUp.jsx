@@ -12,10 +12,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const Login = () => {
-  const handleLogin = (e) => {
+const SignUp = () => {
+  const handleSignUp = (e) => {
     e.preventDefault();
-    // TODO: Add login logic
+    // TODO: Add sign up logic
   };
 
   return (
@@ -27,14 +27,26 @@ const Login = () => {
     >
       <Card className="w-full max-w-md bg-zinc-950 text-white shadow-xl rounded-2xl border border-zinc-800">
         <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-3xl font-bold">Welcome back 👋</CardTitle>
+          <CardTitle className="text-3xl font-bold">
+            Create your account
+          </CardTitle>
           <CardDescription className="text-zinc-400">
-            Log in to access your dashboard
+            Sign up to get started with LiveMit
           </CardDescription>
         </CardHeader>
 
         <CardContent>
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleSignUp} className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="Your name"
+                required
+                className="bg-zinc-900 text-white placeholder:text-zinc-500 border-zinc-700 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -45,31 +57,21 @@ const Login = () => {
                 className="bg-zinc-900 text-white placeholder:text-zinc-500 border-zinc-700 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  to="/forgot-password"
-                  className="text-sm text-blue-400 hover:text-blue-300 underline-offset-4 hover:underline cursor-pointer"
-                >
-                  Forgot password?
-                </Link>
-              </div>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 type="password"
+                placeholder="Create a password"
                 required
-                placeholder="Your password"
                 className="bg-zinc-900 text-white placeholder:text-zinc-500 border-zinc-700 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-
             <Button
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition cursor-pointer"
             >
-              Login
+              Sign Up
             </Button>
           </form>
 
@@ -84,19 +86,19 @@ const Login = () => {
 
           <Button
             variant="outline"
-            className="w-full text-zinc-900 border-zinc-700 hover:bg-blue-700 hover:text-white font-medium transition cursor-pointer"
+            className="w-full text-blue-400 border-zinc-700 hover:bg-blue-700 hover:text-white font-medium transition cursor-pointer"
           >
-            Login with Google
+            Sign Up with Google
           </Button>
         </CardContent>
 
         <CardFooter className="justify-center text-sm text-zinc-400">
-          Don’t have an account?{" "}
+          Already have an account?{" "}
           <Link
-            to="/signup"
+            to="/login"
             className="text-blue-400 hover:underline ml-1 font-medium cursor-pointer"
           >
-            Sign Up
+            Login
           </Link>
         </CardFooter>
       </Card>
@@ -104,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -18,8 +19,10 @@ const Home = () => {
           <span className="whitespace-nowrap">Share your work, get
           insights, and connect—all distraction-free.</span>
         </p>
-        <button className="px-4 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors">
-          Get Started
+        <button className="px-4 py-3 mt-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors cursor-pointer">
+          <Link to="/signup" className="text-white">
+            Get Started
+          </Link>
         </button>
       </section>
 
