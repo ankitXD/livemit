@@ -33,7 +33,7 @@ const Navbar = () => {
             Pricing
           </Link>
           <Link
-            href="/blog"
+            to="/blog"
             className="hover:text-blue-400 text-white transition-colors"
           >
             Blog
