@@ -7,6 +7,8 @@ import Features from "./pages/Features.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Blog from "./pages/Blog.jsx";
 import SignUp from "./components/SignUp.jsx";
+import Terms from "./pages/Terms.jsx";
+import Privacy from "./pages/Privacy.jsx";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/features" element={<Features />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
       </Router>
