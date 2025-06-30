@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   return (
@@ -26,9 +27,11 @@ const Pricing = () => {
             <span className="text-3xl font-extrabold mb-4 text-blue-400">
               ₹0
             </span>
-            <button className="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer">
-              Get Started
-            </button>
+            <Link to="/signup" className="w-full">
+              <button className="w-full px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer">
+                Get Started
+              </button>
+            </Link>
           </div>
           {/* Pro Plan */}
           <div className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border-2 border-blue-600 scale-105 z-10">
@@ -45,9 +48,11 @@ const Pricing = () => {
             <span className="text-3xl font-extrabold mb-4 text-blue-400">
               ₹749<span className="text-lg font-medium text-zinc-300">/mo</span>
             </span>
-            <button className="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer">
-              Start Pro Trial
-            </button>
+            <Link to="/signup" className="w-full">
+              <button className="w-full px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer">
+                Start Pro Trial
+              </button>
+            </Link>
           </div>
           {/* Team Plan */}
           <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-900/40">
@@ -64,9 +69,11 @@ const Pricing = () => {
             <span className="text-3xl font-extrabold mb-4 text-blue-400">
               Contact Us
             </span>
-            <button className="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer">
-              Contact Sales
-            </button>
+            <Link to="/signup" className="w-full">
+              <button className="w-full px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors shadow cursor-pointer">
+                Contact Sales
+              </button>
+            </Link>
           </div>
         </div>
       </section>
