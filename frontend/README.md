@@ -1,12 +1,75 @@
-# React + Vite
+# LiveMit Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the LiveMit SaaS platform, built with React (Vite), Tailwind CSS, and shadcn/ui. It features a modern, responsive, and accessible UI with a black/blue theme.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+frontend/
+  ├── public/
+  ├── src/
+  │   ├── components/
+  │   │   ├── Navbar.jsx
+  │   │   ├── Login.jsx
+  │   │   ├── SignUp.jsx
+  │   ├── pages/
+  │   │   ├── Home.jsx
+  │   │   ├── Features.jsx
+  │   │   ├── Pricing.jsx
+  │   │   ├── Blog.jsx
+  │   │   ├── Terms.jsx
+  │   │   ├── Privacy.jsx
+  │   │   └── ...
+  │   ├── App.jsx
+  │   ├── main.jsx
+  │   └── index.css
+  ├── package.json
+  ├── vite.config.js
+  └── README.md
+```
 
-## Expanding the ESLint configuration
+## Routing Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Routing is handled by **React Router DOM**. The main routes are defined in `App.jsx` and correspond to the following pages:
+
+| Path        | Component | Description                               |
+| ----------- | --------- | ----------------------------------------- |
+| `/`         | Home      | Landing page with hero, features, pricing |
+| `/features` | Features  | Key features and benefits                 |
+| `/pricing`  | Pricing   | Pricing plans (in INR)                    |
+| `/blog`     | Blog      | Blog posts and updates                    |
+| `/login`    | Login     | User login form                           |
+| `/signup`   | SignUp    | User registration form                    |
+| `/terms`    | Terms     | Terms of Service                          |
+| `/privacy`  | Privacy   | Privacy Policy                            |
+
+All navigation is handled via the `Navbar` component, which is sticky, blurred, and responsive.
+
+## Styling
+
+- **Tailwind CSS** is used for utility-first styling and responsive design.
+- **shadcn/ui** provides accessible, modern UI components.
+- The theme uses a black/blue gradient background, blue accents, and white text for a professional SaaS look.
+
+## Getting Started
+
+1. Install dependencies:
+   ```sh
+   cd frontend
+   npm install
+   ```
+2. Start the development server:
+   ```sh
+   npm run dev
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Customization
+
+- Update routes or add new pages in `src/pages/` and register them in `App.jsx`.
+- Edit the `Navbar.jsx` for navigation changes.
+- Adjust theme and styles in `index.css` or Tailwind config.
+
+## License
+
+MIT
