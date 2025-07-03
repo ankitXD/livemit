@@ -19,6 +19,14 @@ import Profile from "./pages/Profile.jsx";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+  return null;
+}
+
 function AppContent() {
   const location = useLocation();
   const hideNavbarRoutes = ["/signup", "/login", "/forgot-password"];
@@ -31,6 +39,7 @@ function AppContent() {
         background: "linear-gradient(135deg, #0f0f0f, #1c1c1e, #2a2a2d)",
       }}
     >
+      <ScrollToTop />
       {!hideNavbar && <Navbar />}
       <main className="flex-1 flex flex-col">
         <Routes>

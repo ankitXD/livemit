@@ -1,11 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.7, type: "spring" },
+  }),
+};
 
 const Home = () => {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen text-white text-center px-4 pt-20">
       {/* Hero Section */}
-      <section className="w-full max-w-3xl mx-auto mb-12">
+      <motion.section
+        className="w-full max-w-3xl mx-auto mb-12"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, type: "spring" }}
+      >
         <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight drop-shadow">
           Discover, Review, and{" "}
           <span className="whitespace-nowrap">Grow with LiveMit.</span>
@@ -21,110 +36,142 @@ const Home = () => {
           </span>
         </p>
         <Link to="/signup" className="w-full">
-          <button className="px-5 py-3 mt-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors cursor-pointer">
+          <motion.button
+            className="px-5 py-3 mt-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg transition-colors cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             Get Started
-          </button>
+          </motion.button>
         </Link>
-      </section>
+      </motion.section>
 
       {/* Key Features / Benefits section */}
       <section className="w-full max-w-4xl mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-          <span className="text-4xl mb-4">🚀</span>
-          <h2 className="text-2xl font-bold mb-2">Fast & Focused</h2>
-          <p className="opacity-90">
-            Review projects without distractions—no social feeds, just what
-            matters.
-          </p>
-        </div>
-        <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-          <span className="text-4xl mb-4">🔒</span>
-          <h2 className="text-2xl font-bold mb-2">Private & Secure</h2>
-          <p className="opacity-90">
-            Your reviews and data stay private. No tracking, no ads, just
-            privacy.
-          </p>
-        </div>
-        <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-          <span className="text-4xl mb-4">✨</span>
-          <h2 className="text-2xl font-bold mb-2">Easy to Use</h2>
-          <p className="opacity-90">
-            A clean, intuitive interface that lets you get started in seconds.
-          </p>
-        </div>
+        {["🚀", "🔒", "✨"].map((icon, i) => (
+          <motion.div
+            key={i}
+            className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            custom={i}
+          >
+            <span className="text-4xl mb-4">{icon}</span>
+            <h2 className="text-2xl font-bold mb-2">
+              {icon === "🚀"
+                ? "Fast & Focused"
+                : icon === "🔒"
+                ? "Private & Secure"
+                : "Easy to Use"}
+            </h2>
+            <p className="opacity-90">
+              {icon === "🚀"
+                ? "Review projects without distractions—no social feeds, just what matters."
+                : icon === "🔒"
+                ? "Your reviews and data stay private. No tracking, no ads, just privacy."
+                : "A clean, intuitive interface that lets you get started in seconds."}
+            </p>
+          </motion.div>
+        ))}
       </section>
 
       {/* How It Works / Workflow Section */}
-      <section className="w-full max-w-5xl mt-24">
+      <motion.section
+        className="w-full max-w-5xl mt-24"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUp}
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-10">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="flex flex-col items-center">
-            <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
-              1
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Sign Up & Login</h3>
-            <p className="opacity-90">
-              Create your free account in seconds and log in securely.
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
-              2
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Browse & Review</h3>
-            <p className="opacity-90">
-              Explore projects, leave feedback, and see what others are
-              building.
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
-              3
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Grow & Connect</h3>
-            <p className="opacity-90">
-              Build your network, improve your projects, and connect with the
-              community.
-            </p>
-          </div>
+          {[1, 2, 3].map((step, i) => (
+            <motion.div
+              key={step}
+              className="flex flex-col items-center"
+              variants={fadeInUp}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
+                {step}
+              </div>
+              <h3 className="text-xl font-semibold mb-2">
+                {step === 1
+                  ? "Sign Up & Login"
+                  : step === 2
+                  ? "Browse & Review"
+                  : "Grow & Connect"}
+              </h3>
+              <p className="opacity-90">
+                {step === 1
+                  ? "Create your free account in seconds and log in securely."
+                  : step === 2
+                  ? "Explore projects, leave feedback, and see what others are building."
+                  : "Build your network, improve your projects, and connect with the community."}
+              </p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Social Proof Section */}
-      <section className="w-full max-w-5xl mt-24 mb-20">
+      <motion.section
+        className="w-full max-w-5xl mt-24 mb-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUp}
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-10">
           What Our Users Say
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-            <p className="italic mb-4">
-              “This platform made project reviews so much easier and focused.
-              Love the clean UI!”
-            </p>
-            <span className="font-bold">— Alex P.</span>
-          </div>
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-            <p className="italic mb-4">
-              “No more distractions from social media. I can finally get real
-              feedback.”
-            </p>
-            <span className="font-bold">— Priya S.</span>
-          </div>
-          <div className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-            <p className="italic mb-4">
-              “Super easy to use and the privacy is a huge plus. Highly
-              recommend!”
-            </p>
-            <span className="font-bold">— Jordan W.</span>
-          </div>
+          {[
+            "This platform made project reviews so much easier and focused. Love the clean UI!",
+            "No more distractions from social media. I can finally get real feedback.",
+            "Super easy to use and the privacy is a huge plus. Highly recommend!",
+          ].map((quote, i) => (
+            <motion.div
+              key={i}
+              className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center"
+              variants={fadeInUp}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <p className="italic mb-4">“{quote}”</p>
+              <span className="font-bold">
+                {i === 0 ? "— Alex P." : i === 1 ? "— Priya S." : "— Jordan W."}
+              </span>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
       {/* Pricing Section */}
-      <section className="w-full max-w-5xl mt-24 mb-20">
+      <motion.section
+        className="w-full max-w-5xl mt-24 mb-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUp}
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-10">Pricing</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Free Plan */}
-          <div className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-900/40">
+          <motion.div
+            className="bg-gradient-to-br from-black via-zinc-900 to-blue-900 rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-900/40"
+            variants={fadeInUp}
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <h3 className="text-xl font-bold mb-2 text-white">Free</h3>
             <p className="mb-4 text-zinc-300">
               Perfect for individuals just getting started.
@@ -142,9 +189,16 @@ const Home = () => {
                 Get Started
               </button>
             </Link>
-          </div>
+          </motion.div>
           {/* Pro Plan */}
-          <div className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border-2 border-blue-600 scale-105 z-10">
+          <motion.div
+            className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border-2 border-blue-600 scale-105 z-10"
+            variants={fadeInUp}
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <h3 className="text-xl font-bold mb-2 text-blue-400">Pro</h3>
             <p className="mb-4 text-zinc-300">
               For power users and professionals.
@@ -163,9 +217,16 @@ const Home = () => {
                 Start Pro Trial
               </button>
             </Link>
-          </div>
+          </motion.div>
           {/* Enterprise Plan */}
-          <div className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-600">
+          <motion.div
+            className="bg-gradient-to-br from-blue-900 via-zinc-900 to-black rounded-2xl p-8 shadow-2xl flex flex-col items-center border border-blue-600"
+            variants={fadeInUp}
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <h3 className="text-xl font-bold mb-2 text-blue-400">Enterprise</h3>
             <p className="mb-4 text-zinc-300">
               For large teams and organizations.
@@ -184,12 +245,18 @@ const Home = () => {
                 Contact Sales
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action Section */}
-      <section className="w-full max-w-3xl mx-auto mt-24 mb-12 p-6 bg-white/10 rounded-xl shadow-lg text-center">
+      <motion.section
+        className="w-full max-w-3xl mx-auto mt-24 mb-12 p-6 bg-white/10 rounded-xl shadow-lg text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUp}
+      >
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           Ready to Elevate Your Projects?
         </h2>
@@ -197,11 +264,15 @@ const Home = () => {
           Join LiveMit today and start receiving the feedback you need to grow.
         </p>
         <Link to="/signup" className="w-full">
-          <button className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg shadow-md transition-colors cursor-pointer">
+          <motion.button
+            className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg shadow-md transition-colors cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             Join the Community
-          </button>
+          </motion.button>
         </Link>
-      </section>
+      </motion.section>
 
       {/* Footer Section */}
       <footer className="w-full max-w-5xl mx-auto py-10 border-t border-white/10">
