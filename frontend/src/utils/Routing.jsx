@@ -12,6 +12,7 @@ import ForgotPassword from "../pages/ForgotPassword.jsx";
 import Profile from "../pages/Profile.jsx";
 import UpdateProfile from "../pages/UpdateProfile.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
 
 function Routing() {
   return (
@@ -25,9 +26,15 @@ function Routing() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/update-profile" element={<UpdateProfile />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
+      <Route
+        path="/update-profile"
+        element={<PrivateRoute element={<UpdateProfile />} />}
+      />
+      <Route
+        path="/dashboard"
+        element={<PrivateRoute element={<Dashboard />} />}
+      />
     </Routes>
   );
 }
