@@ -12,6 +12,11 @@ import ForgotPassword from "../pages/ForgotPassword.jsx";
 import Profile from "../pages/Profile.jsx";
 import UpdateProfile from "../pages/UpdateProfile.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
+import FormBuilder from "../pages/FormBuilder.jsx";
+import FormSubmit from "../pages/FormSubmit.jsx";
+import Submissions from "../pages/Submissions.jsx";
+import LiveReview from "../pages/LiveReview.jsx";
+import NotFound from "../pages/NotFound.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 
 function Routing() {
@@ -35,6 +40,20 @@ function Routing() {
         path="/dashboard"
         element={<PrivateRoute element={<Dashboard />} />}
       />
+      <Route
+        path="/form-builder"
+        element={<PrivateRoute element={<FormBuilder />} />}
+      />
+      <Route
+        path="/submissions/:formId"
+        element={<PrivateRoute element={<Submissions />} />}
+      />
+      <Route
+        path="/live-review/:formId"
+        element={<PrivateRoute element={<LiveReview />} />}
+      />
+      <Route path="/n/form/:formId" element={<FormSubmit />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
