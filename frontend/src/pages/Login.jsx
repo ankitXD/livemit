@@ -20,11 +20,18 @@ const Login = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4"
+      className="min-h-screen flex flex-col items-center justify-center px-4"
       style={{
         background: "linear-gradient(135deg, #0f0f0f, #1c1c1e, #2a2a2d)",
       }}
     >
+      <Link
+        to="/"
+        className="mb-8 text-2xl font-bold text-white hover:text-blue-400 transition-colors"
+        style={{ letterSpacing: "1px" }}
+      >
+        LiveMit
+      </Link>
       <Card className="w-full max-w-md bg-zinc-950 text-white shadow-xl rounded-2xl border border-zinc-800">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-3xl font-bold">Welcome back 👋</CardTitle>
