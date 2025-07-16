@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,11 +11,24 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAuthState } from "@/hooks/useAuth";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useAuthState();
+  const [error, setError] = React.useState("");
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // TODO: Add login logic
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    // Dummy credentials
+    if (email === "demo@livemit.com" && password === "password123") {
+      login();
+      navigate("/dashboard");
+    } else {
+      setError("Invalid email or password. Try demo@livemit.com / password123");
+    }
   };
 
   return (
@@ -41,11 +54,15 @@ const Login = () => {
         </CardHeader>
 
         <CardContent>
+          {error && (
+            <div className="mb-4 text-red-400 text-center text-sm">{error}</div>
+          )}
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
+                name="email"
                 type="email"
                 placeholder="you@example.com"
                 required
@@ -65,6 +82,7 @@ const Login = () => {
               </div>
               <Input
                 id="password"
+                name="password"
                 type="password"
                 required
                 placeholder="Your password"
