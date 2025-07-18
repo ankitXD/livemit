@@ -93,7 +93,7 @@ const SignUp = () => {
 
           <Button
             variant="outline"
-            className="w-full text-blue-400 border-zinc-700 hover:bg-blue-700 hover:text-white font-medium transition cursor-pointer"
+            className="w-full text-zinc-900 border-zinc-700 hover:bg-blue-700 hover:text-white font-medium transition cursor-pointer"
           >
             Sign Up with Google
           </Button>
